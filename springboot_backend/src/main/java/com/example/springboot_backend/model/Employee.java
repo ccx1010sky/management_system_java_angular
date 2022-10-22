@@ -1,12 +1,10 @@
 package com.example.springboot_backend.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 
 @Entity
-@Table(name = "employes")
+@Table(name = "employees")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +15,7 @@ public class Employee {
 
     @Column(name = "last_name")
     private String lastName;
+
     @Column(name = " email_id")
     private String emailId;
 
@@ -24,6 +23,7 @@ public class Employee {
     }
 
     public Employee(String firstName, String lastName, String emailId) {
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailId = emailId;
