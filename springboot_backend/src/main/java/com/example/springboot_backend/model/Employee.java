@@ -1,9 +1,10 @@
+
 package com.example.springboot_backend.model;
 
-
+//javax persistence api
 import javax.persistence.*;
 
-
+//Object Relational MySQLdatabase  Mapping
 @Entity
 @Table(name = "employees")
 public class Employee {
