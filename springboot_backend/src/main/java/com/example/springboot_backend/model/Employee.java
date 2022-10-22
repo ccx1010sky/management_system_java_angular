@@ -3,6 +3,7 @@ package com.example.springboot_backend.model;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "employees")
 public class Employee {
@@ -23,7 +24,7 @@ public class Employee {
     }
 
     public Employee(String firstName, String lastName, String emailId) {
-        super();
+//        super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailId = emailId;
