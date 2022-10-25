@@ -19,8 +19,8 @@ export class EmployeeListComponent implements OnInit {
 
   private getEmployees(){
     this.employeeService.getEmployeesList().subscribe(data => {
-      // alert('getEmployees2' + this.employees.length);
       this.employees = data;
+      alert('getEmployees is  ' + this.employees.length);
     });
   }
 
