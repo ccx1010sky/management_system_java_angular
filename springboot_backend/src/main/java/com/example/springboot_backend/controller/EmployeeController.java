@@ -6,10 +6,7 @@ import com.example.springboot_backend.repository.EmployeeRepository;
 import com.example.springboot_backend.model.Employee;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 //RestController is middle layer between JPA and MySQL
 @RestController
@@ -27,6 +24,10 @@ public class EmployeeController {
         return employeeRepository.findAll();
         //http://localhost:8080/api/v1/employees
     }
-
+    // create employee restful api and save to MySQL database
+    @PostMapping("/employees")
+    public Employee createEmployees(Employee employee) {
+        return employeeRepository.save(employee);
+    }
 }
 
