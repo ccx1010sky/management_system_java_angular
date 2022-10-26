@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/")
 public class EmployeeController {
 
-    //    dependency injection
+    //     EmployeeRepository接口声明并实例化employeeRepository, Autowired dependency injection包注入
     @Autowired
     private EmployeeRepository employeeRepository;
 
