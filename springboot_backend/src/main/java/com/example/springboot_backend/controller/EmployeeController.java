@@ -26,7 +26,7 @@ public class EmployeeController {
     }
     // create employee restful api and save to MySQL database
     @PostMapping("/employees")
-    public Employee createEmployees(Employee employee) {
+    public Employee createEmployee(@RequestBody Employee employee) {
         return employeeRepository.save(employee);
     }
 }
