@@ -1,11 +1,14 @@
 package com.example.springboot_backend.controller;
 
 import java.util.List;
+import java.util.Optional;
 
+import com.example.springboot_backend.exception.ResourceNotFoundException;
 import com.example.springboot_backend.repository.EmployeeRepository;
 import com.example.springboot_backend.model.Employee;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 //RestController is middle layer between JPA and MySQL
@@ -14,20 +17,32 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/")
 public class EmployeeController {
 
-    //     EmployeeRepository接口声明并实例化employeeRepository, Autowired dependency injection包注入
+    //     EmployeeRepository接口声明并实例化employeeRepository, Autowired 工厂生产实例 dependency injection并注入
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    // get all employees
+    //接口下的get, post update,delete各种方法：
+    //1,get all employees
     @GetMapping("/employees")
     public List<Employee> getAllEmployees(){
         return employeeRepository.findAll();
         //http://localhost:8080/api/v1/employees
     }
-    // create employee restful api and save to MySQL database
+
+    // 2, create employee restful api and save to MySQL database
     @PostMapping("/employees")
     public Employee createEmployee(@RequestBody Employee employee) {
         return employeeRepository.save(employee);
     }
+
+    //3,get employee by id rest api
+    @GetMapping("/employees/{id}")
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
+        return ResponseEntity.ok(employee);
+    }
+
+
 }
 
