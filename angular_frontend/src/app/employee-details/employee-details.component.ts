@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Employee } from '../employee';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employee-details',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeDetailsComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+  employee: Employee;
+
+  constructor(private route: ActivatedRoute,private employService: EmployeeService) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+
+    this.employee = new Employee();
+    this.employService.getEmployeeById(this.id).subscribe(data =>{
+      this.employee = data;
+    });
   }
 
 }
