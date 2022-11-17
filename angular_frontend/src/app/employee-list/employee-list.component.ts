@@ -28,7 +28,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   updateEmployee(id:number){
-    this.router.navigate([`update-employee`,id]);
+    this.router.navigate(['update-employee',id]);
   }
   employeeDetails(id:number) {
     this.router.navigate(['employee-details',id]);
