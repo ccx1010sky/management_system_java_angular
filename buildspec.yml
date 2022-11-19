@@ -1,10 +1,8 @@
 version: 0.2
 phases:
-  pre_build:
-    commands:
-      - cd springboot_backend
   build:
     commands:
+      - cd springboot_backend
       - echo Entered the build phase....
       - mvn clean package
   post_build:
