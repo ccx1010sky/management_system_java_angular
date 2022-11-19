@@ -50,8 +50,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<finalName>springboot_backend</finalName>
 		</plugins>
+		<finalName>springboot_backend</finalName>
 	</build>
 	<repositories>
 		<repository>
