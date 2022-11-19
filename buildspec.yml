@@ -6,10 +6,11 @@ phases:
   build:
     commands:
       - echo Entered the build phase....
+      - mvn clean package
   post_build:
     commands:
       - echo Build completed successfully
 artifacts:
   files:
-    - target/springboot_backend-0.0.1-SNAPSHOT.jar
+    - target/srpingboot_backend.jar
   discard-paths: yes
