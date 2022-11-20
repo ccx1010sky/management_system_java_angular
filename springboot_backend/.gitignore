@@ -1,5 +1,8 @@
 HELP.md
+
+#commentout
 #target/
+
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -19,6 +22,10 @@ HELP.md
 *.iml
 *.ipr
 /src/main/resources/application.properties
+
+#add
+/target/classes/application.properties
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
