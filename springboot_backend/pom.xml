@@ -54,7 +54,7 @@
 		</plugins>
 		<finalName>springboot_backend</finalName>
 	</build>
-	
+
 	<repositories>
 		<repository>
 			<id>spring-milestones</id>

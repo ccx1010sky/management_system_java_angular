@@ -10,5 +10,5 @@ phases:
       - echo Build completed successfully
 artifacts:
   files:
-    - target/srpingboot_backend.jar
+    - /Users/home/Projects/management_system_java_angular/springboot_backend/target/springboot_backend.jar
   discard-paths: yes
