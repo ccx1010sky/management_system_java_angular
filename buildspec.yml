@@ -3,12 +3,11 @@ phases:
   build:
     commands:
       - cd springboot_backend
-      - echo Entered the build phase....
-      - mvn clean package
+      - echo Entered the build phase............
   post_build:
     commands:
       - echo Build completed successfully
 artifacts:
   files:
-    - /Users/home/Projects/management_system_java_angular/springboot_backend/target/springboot_backend.jar
+    - target/springboot_backend.jar
   discard-paths: yes
