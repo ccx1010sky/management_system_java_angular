@@ -52,7 +52,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>springboot_backend</finalName>
 	</build>
 
 	<repositories>
