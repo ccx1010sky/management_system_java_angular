@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 //RestController is middle layer between JPA and MySQL
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://ngfrontendcode.s3-website.eu-west-2.amazonaws.com")
 @RequestMapping("/api/v1/")
 public class EmployeeController {
 
